@@ -4,9 +4,9 @@ const fs = require('fs');
 
 // import possible team staff
 const Employee = require('./lib/employee');
-const Intern = require('./lib/engineer');
+const Intern = require('./lib/intern');
 const Manager = require('./lib/manager');
-const Engineer = require('./lib/manager');
+const Engineer = require('./lib/engineer');
 
 // import generate html function
 const generateHTML = require('./src/generateHTML');
