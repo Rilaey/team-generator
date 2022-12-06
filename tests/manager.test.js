@@ -1,37 +1,31 @@
-const Employee = require('../lib/employee')
 const Manager = require('../lib/manager.js');
 
 test('new manager should return user input name', () => {
-    const test = new Manager;
-    test.name = 'riley';
+    const test = new Manager('ted', 21, 'ted@gmail.com', 4);
 
-    expect(test.name).toEqual(test.name);
+    expect(test.getName()).toBe("ted");
 })
 
 test('new manager should return user input employee id', () => {
-    const test = new Manager;
-    test.id = 1;
+    const test = new Manager('ted', 21, 'ted@gmail.com', 4);
 
-    expect(test.id).toEqual(1);
+    expect(test.getId()).toEqual(21);
 })
 
 test('new manager should return user input email', () => {
-    const test = new Manager;
-    test.email = 'test@gmail.com';
+    const test = new Manager('ted', 21, 'ted@gmail.com', 4);
 
-    expect(test.email).toBe('test@gmail.com')
+    expect(test.getEmail()).toBe('ted@gmail.com');
 })
 
 test('new manager should return user input office number', () => {
-    const test = new Manager;
-    test.officeNumber = 1;
+    const test = new Manager('ted', 21, 'ted@gmail.com', 4);
 
-    expect(test.officeNumber).toBe(1)
+    expect(test.officeNumber).toBe(4)
 })
 
 test('new manager should return the role of manager', () => {
-    const test = new Manager;
-    test.getRole = 'Manager'
-
-    expect(test.getRole).toBe('Manager')
+    const test = new Manager('ted', 21, 'ted@gmail.com', 4);
+    
+    expect(test.getRole()).toBe('Manager')
 })

@@ -1,36 +1,31 @@
 const Intern = require('../lib/intern')
 
 test('new intern should return user input name', () => {
-    const test = new Intern;
-    test.name = 'riley';
+    const test = new Intern('riley', 9, 'test@gmail.com', 'ucf');
 
-    expect(test.name).toEqual('riley')
+    expect(test.getName()).toBe('riley')
 })
 
 test('new intern should return user input id', () => {
-    const test = new Intern;
-    test.id = 5;
+    const test = new Intern('riley', 9, 'test@gmail.com', 'ucf');
 
-    expect(test.id).toEqual(5)
+    expect(test.getId()).toBe(9)
 })
 
 test('new intern should return user input email', () => {
-    const test = new Intern;
-    test.email = 'new@gmail.com';
+    const test = new Intern('riley', 9, 'test@gmail.com', 'ucf');;
 
-    expect(test.email).toEqual('new@gmail.com')
+    expect(test.getEmail()).toBe('test@gmail.com')
 })
 
 test('new intern should return user input school', () => {
-    const test = new Intern;
-    test.getSchool = 'ucf';
+    const test = new Intern('riley', 9, 'test@gmail.com', 'ucf');
 
-    expect(test.getSchool).toBe('ucf')
+    expect(test.getSchool()).toBe('ucf')
 })
 
 test('new intern should return role of intern', () => {
-    const test = new Intern;
-    test.getRole = 'Intern';
+    const test = new Intern('riley', 9, 'test@gmail.com', 'ucf');
 
-    expect(test.getRole).toBe('Intern')
+    expect(test.getRole()).toBe('Intern')
 })

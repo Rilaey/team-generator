@@ -68,13 +68,13 @@ const managerQuestions = [
         }
     ];
 
-function init() {
-    inquirer.prompt(managerQuestions)
-    .then(function(data) {
-        if(data.choices == 'Intern') {
-            inquirer.prompt(managerQuestions)
-        }
-    })
-}
+// function init() {
+//     inquirer.prompt(managerQuestions)
+//     .then(function(data) {
+//         if(data.choices == 'Intern') {
+//             inquirer.prompt(managerQuestions)
+//         }
+//     })
+// }
 
-init()
+// init()

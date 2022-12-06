@@ -1,5 +1,5 @@
 // manager card 
-function generateManage(manager) {
+function generateManager(manager) {
     return `<div class="col-4 mt-4 wholeCard">
     <div class="card h-100">
         <div class="card-header text-bg-primary">
@@ -20,13 +20,13 @@ function generateEngineer(engineer) {
     return `<div class="col-4 mt-4 wholeCard">
     <div class="card h-100">
         <div class="card-header text-bg-primary">
-            <h3>${Engineer.name}</h3>
+            <h3>${engineer.name}</h3>
             <h4>Engineer</h4><span class="material-symbols-outlined">keyboard</span>
         </div>
         <div class="card-body">
-            <p class="id">ID: ${Engineer.ID}</p>
-            <p class="email">Email: <a href="mailto:${Engineer.email}">${Engineer.email}</a></p>
-            <p class="github">Github: <a href="https://github.com/${Engineer.github}">${Engineer.github}</a></p>
+            <p class="id">ID: ${engineer.ID}</p>
+            <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+            <p class="github">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
         </div>
     </div>
 </div>`
@@ -37,13 +37,13 @@ function generateIntern(intern) {
     return `<div class="col-4 mt-4 wholeCard">
     <div class="card h-100">
         <div class="card-header text-bg-primary">
-            <h3>${Intern.name}</h3>
+            <h3>${intern.name}</h3>
             <h4>Intern</h4><span class="material-symbols-outlined">school</span>
         </div>
         <div class="card-body">
-            <p class="id">ID: ${Intern.ID}</p>
-            <p class="email">Email: <a href="mailto:${Intern.email}">${Intern.email}</a></p>
-            <p class="school">School: ${Intern.school}</p>
+            <p class="id">ID: ${intern.ID}</p>
+            <p class="email">Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
+            <p class="school">School: ${intern.school}</p>
         </div>
     </div>
 </div>`
@@ -78,4 +78,11 @@ function generateHTML(data) {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     </body>
     </html>`
+}
+
+module.exports = {
+    generateEngineer ,
+    generateHTML ,
+    generateIntern ,
+    generateManager
 }
