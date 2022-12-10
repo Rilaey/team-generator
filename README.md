@@ -19,6 +19,7 @@
 
   ## Usage
   - After cloning the code repo for use, start the application by running "node index" in the terminal.
+  - Watch the application in action at the link below.
   [team-generator.webm](https://user-images.githubusercontent.com/94302477/206825250-886a9223-213a-437f-a225-7acdf961a5b7.webm)
 
   ## License
