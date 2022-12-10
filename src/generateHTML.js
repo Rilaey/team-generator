@@ -1,4 +1,4 @@
-// manager card 
+// manager card
 function generateManager(manager) {
     return `<div class="col-4 mt-4 wholeCard">
     <div class="card h-100">
@@ -7,9 +7,9 @@ function generateManager(manager) {
             <h4>Manager</h4><span class="material-symbols-outlined">local_cafe</span>
         </div>
         <div class="card-body">
-            <p class="id">ID: ${manager.ID}</p>
-            <p class="email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
-            <p class="office">Office Number: ${manager.officeNumber}</p>
+            <p>ID: ${manager.id}</p>
+            <p>Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
+            <p>Office Number: ${manager.officeNumber}</p>
         </div>
     </div>
 </div>`
@@ -24,9 +24,9 @@ function generateEngineer(engineer) {
             <h4>Engineer</h4><span class="material-symbols-outlined">keyboard</span>
         </div>
         <div class="card-body">
-            <p class="id">ID: ${engineer.ID}</p>
-            <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-            <p class="github">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
+            <p>ID: ${engineer.id}</p>
+            <p>Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+            <p>Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
         </div>
     </div>
 </div>`
@@ -41,16 +41,44 @@ function generateIntern(intern) {
             <h4>Intern</h4><span class="material-symbols-outlined">school</span>
         </div>
         <div class="card-body">
-            <p class="id">ID: ${intern.ID}</p>
-            <p class="email">Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
-            <p class="school">School: ${intern.school}</p>
+            <p>ID: ${intern.id}</p>
+            <p>Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
+            <p>School: ${intern.school}</p>
         </div>
     </div>
 </div>`
 }
 
-// generate html page
-function generateHTML(data) {
+// function to generate html cards
+function generateHTML(data) { 
+    const empArray = []; 
+
+    for (let i = 0; i < data.length; i++) {
+        const employee = data[i];
+        const empRole = employee.getRole(); 
+
+        // if statement to decide which function to call
+        if (empRole === 'Manager') {
+            const managerCard = generateManager(employee);
+            empArray.push(managerCard);
+        } else if(empRole == 'Engineer') {
+            const engineerCard = generateEngineer(employee);
+            empArray.push(engineerCard);
+        } else if(empRole == 'Intern') {
+            const internCard = generateIntern(employee);
+            empArray.push(internCard);
+        }
+    }
+    // turn empArray into a string
+    const empCards = empArray.join('')
+
+    // return to generated page function
+    const generateTeam = generateTeamPage(empCards); 
+    return generateTeam;
+}
+
+// generate the HTML template
+function generateTeamPage(empCards) {
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -69,9 +97,7 @@ function generateHTML(data) {
     
         <section class="container">
             <div class="row">
-                <div class="col-4 mt-4 wholeCard">
-                    
-                </div>
+                ${empCards}
             </div>    
         </section>  
     
@@ -80,9 +106,4 @@ function generateHTML(data) {
     </html>`
 }
 
-module.exports = {
-    generateEngineer ,
-    generateHTML ,
-    generateIntern ,
-    generateManager
-}
+    module.exports = generateHTML; 
